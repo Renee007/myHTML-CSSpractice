@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<style>
+ /* 这个例子在容器比nav元素高的时候可以正常工作。如果容器比nav元素低，那么nav会溢出到容器的外面。因为nav是absolute的，不占据空间，container不会随之移动。 */ 
+*{
+  box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
+-webkit-box-sizing:border-box; /* Safari */  
+}
+body {
+  margin-bottom: 120px; /* 以免footer遮挡container中末尾部分内容*/ 
+}
+.container{
+    position:relative;  /* 若不设置为非static，nav的left的对象是body，会到container外面去 */
+    max-width:600px;
+    /* 不能设height，否则下边框就固定了，不设可以跟随section的最下边任意移动 */
+    border:solid 5px rgb(150,192,46);
+    margin: 0 auto;/* 居中 */
+}
+footer{
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;/* 这里也可以用设置right：0px 代替，还没发现区别*/
+    height:50px;
+    border:solid 5px rgb(150,192,46);
+    background:white;/* 如果不设背景白色，会透出后面的字哦 */
+}
+nav{
+    position:absolute;/* 设为absolute使其脱离文档流，这样nav这个块级元素右边才可以正常显示section */
+    left:0px;
+    width:150px;
+    border:solid 5px rgb(214,64,120);
+}
+section{
+    border:solid 5px rgb(253,199,47);
+    margin-left:150px;/* position是默认的static,设置left使其呈现为在nav右边，这里需要知道nav的宽度 */
+    padding:10px;
+}
+</style>
+
+</head>
+<body>
+<div class="container">
+    <nav >
+        <ul>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+        </ul>
+    </nav>
+    <section>section 的 margin-left 样式确保了有足够的空间容纳 nav 元素。</section>
+    <section>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</section>
+    <section>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</section>
+    <section>注意观察当你调整浏览器窗口时发生了什么。效果很赞！</section>
+</div>
+<footer>如果你使用了一个固定定位的页眉或页脚，确保有足够的空间来显示它们！我在 body 上面加了 margin-bottom 。</footer>
+</body>
+</html>

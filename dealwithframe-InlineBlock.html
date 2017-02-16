@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<style>
+
+*{
+  box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
+-webkit-box-sizing:border-box; /* Safari */  
+}
+.container{
+    max-width:600px;
+    border:solid 5px rgb(150,192,46);
+    margin: 0 auto;/* 居中 */
+}
+nav{
+  border:solid 5px rgb(214,64,120);
+  display: inline-block;
+  vertical-align: top;/*vertical-align 属性会影响到 inline-block 元素，你可能会把它的值设置为 top 。*/
+  width: 25%;/*你需要设置每一列的宽度*/
+}
+section{
+  border:solid 5px rgb(253,199,47);
+  
+}
+.column{
+  width: 75%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+</style>
+
+</head>
+<body>
+<div class="container">
+    <nav >
+        <ul>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+            <li>banana</li>
+        </ul>
+    </nav><div class="column">
+    <!-- 如果HTML源代码中元素之间有空格，那么列与列之间会产生空隙 -->
+    <section>section 的 margin-left 样式确保了有足够的空间容纳 nav 元素。</section>
+    <section>注意观察当你调整浏览器窗口时发生了什么。效果很赞！</section>
+  </div>
+</div>
+
+</body>
+</html>
