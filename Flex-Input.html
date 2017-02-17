@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<style>
+/*某个网格的宽度为固定的百分比，其余网格平均分配剩余的空间。*/
+*{
+   -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ box-sizing: border-box;  
+}
+.wrap{
+    display: flex;
+    /*flex-direction:column;*/
+    justify-content:space-between;
+}
+.inputframe{
+/*border:solid 5px rgb(253,212,103);*/
+
+display:flex;
+}
+input{
+    flex:1;
+}
+</style>
+
+</head>
+<body class="wrap">
+    <div class="inputframe">
+        <span>search</span>
+        <input/>
+        <button>send</button>
+    </div>
+        <div class="inputframe">
+        <span>search</span>
+        <input/>
+        <button>send</button>
+    </div>
+</body>
+</html>

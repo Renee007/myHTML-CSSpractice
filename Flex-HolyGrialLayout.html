@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<style>
+/*某个网格的宽度为固定的百分比，其余网格平均分配剩余的空间。*/
+*{
+   -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ box-sizing: border-box;  
+}
+.HolyGrail{
+
+border:solid 5px rgb(253,212,103);
+min-height: 100vh;
+
+display:flex;
+flex-direction: column;
+}
+header{
+border:solid 5px rgb(102,102,102);
+
+}
+footer{
+border:solid 5px rgb(102,102,102);
+
+}
+.HolyBody{
+display:flex;
+flex:1;
+}
+.HolyGrail-nav{
+border:solid 5px rgb(119,187,221);
+flex:0 0 25%;
+order:-1;
+}
+.HolyGrail-content{
+border:solid 5px rgb(214,214,214);
+flex:1;
+}
+.HolyGrail-ads{
+border:solid 5px rgb(255,102,51);
+flex:0 0 25%;
+}
+</style>
+
+</head>
+<body>
+    <div class="HolyGrail">
+        <header>header</header>
+        <div class="HolyBody">
+            <main class="HolyGrail-content">...</main>
+            <nav class="HolyGrail-nav">left</nav>
+            <aside class="HolyGrail-ads">right</aside>
+        </div>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>
